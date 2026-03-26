@@ -51,6 +51,18 @@ export default function Contact() {
               />
             </div>
 
+            <div className="flex flex-col gap-2">
+              <label htmlFor="description" className="text-sm font-semibold text-foreground/80 ml-1">Description</label>
+              <textarea
+                name="description"
+                id="description"
+                required
+                placeholder="Tell us more about your enquiry"
+                rows={4}
+                className="w-full px-5 py-4 rounded-xl border border-primary/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground resize-y"
+              />
+            </div>
+
             <button 
               type="submit" 
               className="mt-4 w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
