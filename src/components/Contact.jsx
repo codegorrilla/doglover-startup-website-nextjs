@@ -17,11 +17,12 @@ export default function Contact() {
           <Form action="/submit" className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-sm font-semibold text-foreground/80 ml-1">Name</label>
-              <input 
-                type="text" 
-                name="name" 
-                id="name" 
-                required 
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                minLength={2}
                 placeholder="John Doe"
                 className="w-full px-5 py-4 rounded-xl border border-primary/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground"
               />
@@ -29,11 +30,11 @@ export default function Contact() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-sm font-semibold text-foreground/80 ml-1">Email</label>
-              <input 
-                type="email" 
-                name="email" 
-                id="email" 
-                required 
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
                 placeholder="john@example.com"
                 className="w-full px-5 py-4 rounded-xl border border-primary/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground"
               />
@@ -41,11 +42,13 @@ export default function Contact() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="phone" className="text-sm font-semibold text-foreground/80 ml-1">Phone</label>
-              <input 
-                type="tel" 
-                name="phone" 
-                id="phone" 
-                required 
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                required
+                pattern="[0-9()\-\s+]{10,}"
+                title="Please enter a valid phone number with at least 10 characters."
                 placeholder="(555) 123-4567"
                 className="w-full px-5 py-4 rounded-xl border border-primary/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground"
               />
@@ -57,14 +60,15 @@ export default function Contact() {
                 name="description"
                 id="description"
                 required
+                minLength={10}
                 placeholder="Tell us more about your enquiry"
                 rows={4}
                 className="w-full px-5 py-4 rounded-xl border border-primary/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground resize-y"
               />
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="mt-4 w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
             >
               Submit Enquiry <Send className="w-5 h-5" />
@@ -74,10 +78,10 @@ export default function Contact() {
       </div>
 
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-64 md:w-[28rem] md:h-[28rem] z-0 opacity-95 drop-shadow-xl select-none pointer-events-none mix-blend-multiply dark:mix-blend-screen">
-        <Image 
-          src="/images/vector_dog.png" 
-          alt="Vector Dog holding a bone" 
-          fill 
+        <Image
+          src="/images/vector_dog.png"
+          alt="Vector Dog holding a bone"
+          fill
           className="object-contain object-bottom"
         />
       </div>
