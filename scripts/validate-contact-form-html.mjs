@@ -11,7 +11,7 @@ const checks = [
   },
   {
     name: 'email input has required + type=email',
-    pattern: /<input[\s\S]*?type="email"[\s\S]*?id="email"[\s\S]*?required/,
+    pattern: /<input[^>]*type="email"[^>]*id="email"[^>]*required[^>]*>/,
   },
   {
     name: 'phone input has required + type=tel + pattern',
